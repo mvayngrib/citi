@@ -83,13 +83,14 @@ module.exports = function (opts) {
       .find({ scope: scope })
       .value()
 
-    if (credentials) {
+    if (credentials && credentials.dateExpires < Date.now()) {
       return process.nextTick(() => cb(null, credentials))
     }
 
     getNewClientCredentials(scope, function (err, credentials) {
       if (err) return cb(err)
 
+      credentials.dateExpires = Date.now() + credentials.expires_in * 1000
       db.set('credentials.' + scope, credentials)
         .value()
 
@@ -145,14 +146,15 @@ module.exports = function (opts) {
     typeforce({
       productType: types.productType,
       product: types.product,
-      applicant: types.applicant
+      applicant: types.applicant,
+      auditDetails: typeforce.maybe(types.auditDetails)
     }, opts)
 
     const { productType, product, applicant } = opts
     const data = {
       applicant,
       product: {
-        [productType]: pick(product, 'productCode', 'sourceCode', 'organization', 'logo')
+        [productType]: pick(product, ['productCode', 'sourceCode', 'organization', 'logo'])
       }
     }
 
@@ -205,9 +207,7 @@ module.exports = function (opts) {
     if (application.applicationStage) {
       // already screened
       return process.nextTick(() => {
-        cb(null, {
-          applicationStage: application.applicationStage
-        })
+        cb(null, application)
       })
     }
 
@@ -223,8 +223,8 @@ module.exports = function (opts) {
     }, function (err, result) {
       if (err) return cb(err)
 
-      updateApp(applicationId, result)
-      cb(null, result)
+      const updated = updateApp(applicationId, result)
+      cb(null, updated)
     })
   }
 
@@ -255,8 +255,8 @@ module.exports = function (opts) {
     }, function (err, result) {
       if (err) return cb(err)
 
-      updateApp(application, result)
-      cb(null, result)
+      const updated = updateApp(application, result)
+      cb(null, updated)
     })
   }
 
@@ -277,12 +277,15 @@ module.exports = function (opts) {
 
   function updateApp (application, update) {
     const id = getApplicationId(application)
-    saveApp(id, extend(application, update))
+    const updated = extend(application, update)
+    return saveApp(id, updated)
   }
 
   function saveApp (id, val) {
     db.set(getAppKey(id), val)
       .value()
+
+    return val
   }
 }
 

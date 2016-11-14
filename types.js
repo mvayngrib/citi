@@ -18,6 +18,11 @@ exports.product = typeforce.compile({
   logo: typeforce.maybe(typeforce.String)
 })
 
+exports.auditDetails = typeforce.compile({
+  // todo: validate ip
+  userIpAddress: typeforce.String
+})
+
 exports.name = typeforce.compile({
   salutation: typeforce.String,
   givenName: typeforce.String,
