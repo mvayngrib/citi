@@ -32,16 +32,18 @@ module.exports = function (opts) {
     products,
     createUnsecuredCreditApplication,
     screenUnsecuredCreditApplication,
-    requestCreditApplicationDecision
+    requestCreditApplicationDecision,
+    referenceData
   }
 
   return api
 
-  function callMethod ({ url, scope, args, verb="GET"}, cb) {
+  function callMethod ({ path, scope, args, verb="GET"}, cb) {
     getClientCredentials(scope, function (err, credentials) {
       if (err) return cb(err)
 
       verb = verb.toLowerCase()
+      const url = getMethodUrl(path)
       args = prepArgs(args, credentials)
       cb = wrapCB(cb)
       client[verb](url, args, cb)
@@ -116,7 +118,7 @@ module.exports = function (opts) {
     }
 
     callMethod({
-      url: "https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products",
+      path: "/onboarding/products",
       verb: "GET",
       scope: '/api',
       args: {
@@ -155,7 +157,7 @@ module.exports = function (opts) {
     }
 
     callMethod({
-      url: "https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products/unsecured/applications",
+      path: "/onboarding/products/unsecured/applications",
       verb: "POST",
       scope: '/api',
       args: {
@@ -210,7 +212,7 @@ module.exports = function (opts) {
     }
 
     callMethod({
-      url: `https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products/unsecured/applications/${applicationId}/backgroundScreening`,
+      path: `/onboarding/products/unsecured/applications/${applicationId}/backgroundScreening`,
       verb: "POST",
       scope: '/api',
       args: {
@@ -232,7 +234,7 @@ module.exports = function (opts) {
       return process.nextTick(() => cb(new Error('application not found in database')))
     }
 
-    // if (application.applicationStage) {
+    // if (application.applicationStage === 'APPROVAL' || ) {
     //   // already screened
     //   return process.nextTick(() => {
     //     cb(null, {
@@ -242,7 +244,7 @@ module.exports = function (opts) {
     // }
 
     callMethod({
-      url: `https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products/unsecured/applications/${applicationId}/inPrincipleApprovals`,
+      path: `/onboarding/products/unsecured/applications/${applicationId}/inPrincipleApprovals`,
       verb: "POST",
       scope: '/api',
       args: {
@@ -256,6 +258,21 @@ module.exports = function (opts) {
       updateApp(application, result)
       cb(null, result)
     })
+  }
+
+  function referenceData (value, cb) {
+    throw new Error('not implemented yet')
+
+    // callMethod({
+    //   path: `/v1/apac/utilities/referenceData/${value}`
+    // }, cb)
+
+    // client.get(getMethodUrl(`/v1/apac/utilities/referenceData/${value}`), {
+    //   headers: {
+    //     Accept: 'application/json',
+
+    //   }
+    // }, wrapCB(cb))
   }
 
   function updateApp (application, update) {
@@ -275,4 +292,9 @@ function getAppKey (application) {
 
 function getApplicationId (application) {
   return typeof application === 'string' ? application : application.applicationId
+}
+
+function getMethodUrl (path) {
+  path = path.replace(/\/$/, '') // trim trailing slash
+  return `https://sandbox.apihub.citi.com/gcb/api/v1/apac/${path}`
 }

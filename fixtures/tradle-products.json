@@ -1,0 +1,870 @@
+[
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC620",
+    "title": "Citibank Ready Credit",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC670",
+    "title": "Citibank Ready Credit SmartCash",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.HSP",
+    "title": "Home Loan",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC620",
+    "title": "Citibank Ready Credit",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC040",
+    "title": "Citibank DIVIDEND Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC100",
+    "title": "Citibank Clear Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC820",
+    "title": "Citibank Clear Platinum Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC040",
+    "title": "Citibank DIVIDEND Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC400",
+    "title": "Citibank DIVIDEND MasterCard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC670",
+    "title": "Citibank Ready Credit SmartCash",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC620",
+    "title": "Citibank Ready Credit",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.RC670",
+    "title": "Citibank Ready Credit SmartCash",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC820",
+    "title": "Citibank Clear Platinum Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.AC001",
+    "title": "Citi PremierMiles American Express® Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC030",
+    "title": "Citi PremierMiles Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC050",
+    "title": "Citibank Rewards Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC430",
+    "title": "Citibank Rewards MasterCard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC860",
+    "title": "Citibank M1 Platinum Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC830",
+    "title": "Citibank SMRT Platinum Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC440",
+    "title": "Citi Prestige Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC550",
+    "title": "Citi Paragon WORLD Mastercard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC400",
+    "title": "Citibank DIVIDEND MasterCard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.AC001",
+    "title": "Citi PremierMiles American Express® Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC030",
+    "title": "Citi PremierMiles Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC050",
+    "title": "Citibank Rewards Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC430",
+    "title": "Citibank Rewards MasterCard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC860",
+    "title": "Citibank M1 Platinum Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.VC830",
+    "title": "Citibank SMRT Platinum Visa Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC440",
+    "title": "Citi Prestige Card",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MC550",
+    "title": "Citi Paragon WORLD Mastercard",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  },
+  {
+    "type": "tradle.Model",
+    "id": "citi.MAXIB",
+    "title": "Citibank MaxiSave Account",
+    "interfaces": [
+      "tradle.Message"
+    ],
+    "subClassOf": "tradle.FinancialProduct",
+    "forms": [
+      "tradle.PersonalInfo"
+    ],
+    "properties": {
+      "_t": {
+        "type": "string",
+        "readOnly": true
+      },
+      "from": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      },
+      "to": {
+        "type": "object",
+        "readOnly": true,
+        "ref": "tradle.Identity"
+      }
+    }
+  }
+]
