@@ -4,9 +4,9 @@ const typeforce = require('typeforce')
 const extend = require('xtend')
 // const thunky = require('thunky')
 const Client = require('node-rest-client').Client
-const levelup = require('levelup')
-const leveldown = require('leveldown')
 const uuid = require('uuid')
+const low = require('lowdb')
+const pick = require('object.pick')
 const types = require('./types')
 
 module.exports = function (opts) {
@@ -16,18 +16,23 @@ module.exports = function (opts) {
     db: typeforce.String
   }, opts)
 
-  const cache = {}
   const client_id = opts.client_id
   const client_secret = opts.client_secret
   const client = new Client()
-  const db = levelup(opts.db, {
-    valueEncoding: 'json',
-    db: opts.leveldown || leveldown
-  })
+  const db = low('db.json', { storage: require('lowdb/lib/file-async') })
+  db.defaults({
+      credentials: {},
+      applications: {}
+    })
+    .value()
 
   const api = {
+    applications: getApplications,
+    application: getApplication,
     products,
-    createUnsecuredCreditApplication
+    createUnsecuredCreditApplication,
+    screenUnsecuredCreditApplication,
+    requestCreditApplicationDecision
   }
 
   return api
@@ -71,30 +76,22 @@ module.exports = function (opts) {
 
 
   function getClientCredentials (scope, cb) {
-    const key = 'credentials:' + scope
-    if (cache[key]) {
-      return process.nextTick(function () {
-        cb(null, cache[key])
-      })
+    const credentials = db
+      .get('credentials')
+      .find({ scope: scope })
+      .value()
+
+    if (credentials) {
+      return process.nextTick(() => cb(null, credentials))
     }
 
-    dbFirst(key, getNewClientCredentials.bind(null, scope), cb)
-  }
+    getNewClientCredentials(scope, function (err, credentials) {
+      if (err) return cb(err)
 
-  function dbFirst (key, fallback, cb) {
-    db.get(key, function (err, val) {
-      if (val) return cb(null, val)
+      db.set('credentials.' + scope, credentials)
+        .value()
 
-      fallback(function (err, val) {
-        if (err) return cb(err)
-
-        db.put(key, val, function (err) {
-          if (err) return cb(err)
-
-          cache[key] = val
-          cb(null, val)
-        })
-      })
+      cb(null, credentials)
     })
   }
 
@@ -164,17 +161,118 @@ module.exports = function (opts) {
       args: {
         data: JSON.stringify(data)
       }
-    }, cb)
+    }, function (err, application) {
+      if (err) return cb(err)
+
+      db.set(getAppKey(application), extend(application, data))
+        .value()
+
+      cb(null, application)
+    })
+  }
+
+  function getApplications (cb) {
+    process.nextTick(() => cb(null, getApplicationsSync()))
+  }
+
+  function getApplication (id, cb) {
+    const app = getApplicationSync(id)
+    process.nextTick(() => {
+      if (app) {
+        cb(null, app)
+      } else {
+        cb(new Error('application not found'))
+      }
+    })
+  }
+
+  function getApplicationsSync () {
+    return db.get('applications').value()
+  }
+
+  function getApplicationSync (id) {
+    return db.get(getAppKey(id)).value()
+  }
+
+  function screenUnsecuredCreditApplication (applicationId, cb) {
+    const application = getApplicationSync(applicationId)
+    if (!application) {
+      return process.nextTick(() => cb(new Error('application not found in database')))
+    }
+
+    if (application.applicationStage) {
+      // already screened
+      return process.nextTick(() => {
+        cb(null, {
+          applicationStage: application.applicationStage
+        })
+      })
+    }
+
+    callMethod({
+      url: `https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products/unsecured/applications/${applicationId}/backgroundScreening`,
+      verb: "POST",
+      scope: '/api',
+      args: {
+        data: JSON.stringify({
+          controlFlowId: application.controlFlowId
+        })
+      }
+    }, function (err, result) {
+      if (err) return cb(err)
+
+      updateApp(applicationId, result)
+      cb(null, result)
+    })
+  }
+
+  function requestCreditApplicationDecision (applicationId, cb) {
+    const application = getApplicationSync(applicationId)
+    if (!application) {
+      return process.nextTick(() => cb(new Error('application not found in database')))
+    }
+
+    // if (application.applicationStage) {
+    //   // already screened
+    //   return process.nextTick(() => {
+    //     cb(null, {
+    //       applicationStage: application.applicationStage
+    //     })
+    //   })
+    // }
+
+    callMethod({
+      url: `https://sandbox.apihub.citi.com/gcb/api/v1/apac/onboarding/products/unsecured/applications/${applicationId}/inPrincipleApprovals`,
+      verb: "POST",
+      scope: '/api',
+      args: {
+        data: JSON.stringify({
+          controlFlowId: application.controlFlowId
+        })
+      }
+    }, function (err, result) {
+      if (err) return cb(err)
+
+      updateApp(application, result)
+      cb(null, result)
+    })
+  }
+
+  function updateApp (application, update) {
+    const id = getApplicationId(application)
+    saveApp(id, extend(application, update))
+  }
+
+  function saveApp (id, val) {
+    db.set(getAppKey(id), val)
+      .value()
   }
 }
 
-function pick (obj) {
-  const props = Array.isArray(arguments[1]) ? arguments[1] : Array.prototype.slice.call(arguments, 1)
-  const picked = {}
-  for (var i = 0; i < props.length; i++) {
-    const p = props[i]
-    picked[p] = obj[p]
-  }
+function getAppKey (application) {
+  return 'applications.' + getApplicationId(application)
+}
 
-  return picked
+function getApplicationId (application) {
+  return typeof application === 'string' ? application : application.applicationId
 }

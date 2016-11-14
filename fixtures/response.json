@@ -30,5 +30,370 @@
         "productType" : "CC"
       }
     ]
+  },
+  "screenUnsecuredCreditApplication": {
+    "applicationStage": "PRESCREENING"
+  },
+  "requestCreditApplicationDecision": {
+    "applicationStage": "IN_PRINCIPAL_APPROVAL",
+    "ipaExpiryDate": "2016-07-07",
+    "kbaRequiredFlag": true,
+    "requestedProductDecision": [
+      {
+        "productCode": "VC830",
+        "organisationName": "888",
+        "sourceCode": "WW5ARCE1",
+        "creditDecision": "IN_PRINCIPAL_APPROVED",
+        "creditSpecificRecommendations": [
+          {
+            "recommendedCreditLimit": 30000,
+            "btMaximumLoanPercentage": 5,
+            "btMonthlyInterestRate": 50,
+            "eppMaximumLoanPercentage": 50,
+            "eppMonthlyInterestRate": 50,
+            "btCampaignId": "EXPO43634",
+            "eppPromoId": "34543634"
+          }
+        ],
+        "loanSpecificRecommendations": [
+          {
+            "loanAmount": 30000,
+            "tenor": "MONTHS",
+            "interestRate": 50,
+            "handlingFee": 50,
+            "installmentAmount": 50,
+            "annualPercentageRate": 1,
+            "totalPrincipalAmount": 30000,
+            "totalInterestAmount": 100,
+            "totalInstallmentAmount": 150,
+            "repaymentScheduleIssueDate": "2016-08-16",
+            "repaymentSchedule": [
+              {
+                "tenorOccurence": "10",
+                "paymentDueDate": "2017-09-15",
+                "monthlyInstallmentAmount": 150,
+                "principalAmount": 1000,
+                "interestAmount": 100,
+                "remainingPrincipalAmount": 1000
+              }
+            ]
+          }
+        ],
+        "requiredDocuments": [
+          {
+            "documentId": "NATIONAL_ID",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "NATIONAL_ID",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "PASSPORT",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "PASSPORT",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "DRIVES_LICENSE",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "DRIVES_LICENSE",
+            "applicantType": "P"
+          }
+        ]
+      }
+    ],
+    "counterOffers": [
+      {
+        "offerProductCode": "VC830",
+        "offerProductOrganisation": "888",
+        "offerSourceCode": "WW5ARCE1",
+        "creditSpecificRecommendations": [
+          {
+            "recommendedCreditLimit": 10000,
+            "btMaximumLoanPercentage": 9000,
+            "btMonthlyInterestRate": 1.5,
+            "eppMaximumLoanPercentage": 1.2,
+            "eppMonthlyInterestRate": 2.1,
+            "btCampaignId": "EXPO12313",
+            "eppPromoId": "34543634"
+          }
+        ],
+        "loanSpecificRecommendations": [
+          {
+            "loanAmount": 30000,
+            "tenor": "MONTHS",
+            "interestRate": 50,
+            "handlingFee": 50,
+            "installmentAmount": 50,
+            "annualPercentageRate": 1,
+            "totalPrincipalAmount": 30000,
+            "totalInterestAmount": 100,
+            "totalInstallmentAmount": 150,
+            "repaymentScheduleIssueDate": "2016-08-16",
+            "repaymentSchedule": [
+              {
+                "tenorOccurence": "10",
+                "paymentDueDate": "2017-09-15",
+                "monthlyInstallmentAmount": 150,
+                "principalAmount": 1000,
+                "interestAmount": 100,
+                "remainingPrincipalAmount": 1000
+              }
+            ]
+          }
+        ],
+        "requiredDocuments": [
+          {
+            "documentId": "NATIONAL_ID",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "NATIONAL_ID",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "PASSPORT",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "PASSPORT",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "DRIVES_LICENSE",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "DRIVES_LICENSE",
+            "applicantType": "P"
+          }
+        ]
+      }
+    ],
+    "crossSellOffers": [
+      {
+        "offerProductCode": "VC830",
+        "offerProductOrganisation": "888",
+        "offerSourceCode": "WW5ARCE1",
+        "creditSpecificRecommendations": [
+          {
+            "recommendedCreditLimit": 10000,
+            "btMaximumLoanPercentage": 9000,
+            "btMonthlyInterestRate": 1.5,
+            "eppMaximumLoanPercentage": 1.2,
+            "eppMonthlyInterestRate": 2.1,
+            "btCampaignId": "EXPO12313",
+            "eppPromoId": "34543634"
+          }
+        ],
+        "loanSpecificRecommendations": [
+          {
+            "loanAmount": 30000,
+            "tenor": "MONTHS",
+            "interestRate": 50,
+            "handlingFee": 50,
+            "installmentAmount": 50,
+            "annualPercentageRate": 1,
+            "totalPrincipalAmount": 30000,
+            "totalInterestAmount": 100,
+            "totalInstallmentAmount": 150,
+            "repaymentScheduleIssueDate": "2016-08-16",
+            "repaymentSchedule": [
+              {
+                "tenorOccurence": "10",
+                "paymentDueDate": "2017-09-15",
+                "monthlyInstallmentAmount": 150,
+                "principalAmount": 1000,
+                "interestAmount": 100,
+                "remainingPrincipalAmount": 1000
+              }
+            ]
+          }
+        ],
+        "requiredDocuments": [
+          {
+            "documentId": "NATIONAL_ID",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "NATIONAL_ID",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "PASSPORT",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "PASSPORT",
+            "applicantType": "P"
+          },
+          {
+            "documentId": "DRIVES_LICENSE",
+            "documentStatus": "ok",
+            "productCode": "VC830",
+            "documentType": "DRIVES_LICENSE",
+            "applicantType": "P"
+          }
+        ]
+      }
+    ],
+    "kbaQuestionnaire": {
+      "vedaQuestionnaire": [
+        {
+          "kbaInquiryId": "1232423424",
+          "multipleChoiceQuestionnaire": [
+            {
+              "questionText": "Question 1",
+              "sequenceNumber": "1",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            },
+            {
+              "questionText": "Question 2",
+              "sequenceNumber": "2",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            }
+          ],
+          "trueOrFalseQuestionnaire": [
+            {
+              "questionText": "Question 1",
+              "sequenceNumber": "1",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            },
+            {
+              "questionText": "Question 2",
+              "sequenceNumber": "2",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            }
+          ],
+          "freeTextQuestionnaire": [
+            {
+              "questionText": "Question 1",
+              "sequenceNumber": "1",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            },
+            {
+              "questionText": "Question 2",
+              "sequenceNumber": "2",
+              "responseOptions": [
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "A"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "B"
+                },
+                {
+                  "optionText": "Answer",
+                  "sequenceNumber": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tuQuestionnaire": [
+        {
+          "authenticationToken": "2342424",
+          "tuApplicationId": "567436563",
+          "queue": "2",
+          "examDetails": [
+            {
+              "key": "TUKBA",
+              "title": "KBA",
+              "languageCode": "EN",
+              "matchKeyId": "FSDFWEFSA",
+              "errorGeneratingQa": "ERROR",
+              "timeTakenToAnswer": "10MIN",
+              "questions": [
+                {
+                  "tuQuestionId": "TUID123",
+                  "questionId": "QUESTIONID123",
+                  "questionText": "Question 1",
+                  "questionType": "Choice",
+                  "dummyQuestionFlag": true,
+                  "multipleChoiceQuestionFlag": true,
+                  "listAnswerIndex": "1",
+                  "expirationTime": "5",
+                  "timeTakenToAnswer": "2",
+                  "answers": [
+                    {
+                      "key": "Key 1",
+                      "answerSelected": "Answer 1"
+                    },
+                    {
+                      "key": "Key 2",
+                      "answerSelected": "Answer 2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

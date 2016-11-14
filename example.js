@@ -6,8 +6,42 @@ const citi = createCiti({
   db: './citi.db'
 })
 
-citi.products(function (err, products) {
-  const product = products[0]
+citi.applications(function (err, apps) {
+  if (err) throw err
+
+  const firstId = Object.keys(apps)[0]
+  if (firstId) {
+    return continueApplication(apps[firstId])
+  }
+
+  newApplication(function (err, application) {
+    if (err) throw err
+
+    continueApplication(application)
+  })
+})
+
+function continueApplication (application) {
+  citi.screenUnsecuredCreditApplication(application.applicationId, function (err, result) {
+    if (err) throw err
+
+    switch (result.applicationStage) {
+    case 'PRESCREENING':
+      return citi.requestCreditApplicationDecision(application.applicationId, function (err, result) {
+        console.log(arguments)
+      })
+    case 'APPROVAL':
+      return
+    default:
+      return
+    }
+  })
+}
+
+function newApplication (cb) {
+
+// citi.products(function (err, products) {
+//   const product = products[0]
   citi.createUnsecuredCreditApplication({
     productType: "creditCardProduct",
     "product": {
@@ -55,6 +89,6 @@ citi.products(function (err, products) {
     //   }
     // }
   }, function (err, data) {
-    console.log(err || data)
+    cb(err, data)
   })
-})
+}

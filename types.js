@@ -25,7 +25,7 @@ exports.name = typeforce.compile({
 })
 
 exports.phone = typeforce.compile({
-  phoneType: typeforce.oneOf(['PRIMARY_MOBILE_NUMBER']),
+  phoneType: oneOf('PRIMARY_MOBILE_NUMBER'),
   phoneCountryCode: typeforce.String,
   phoneNumber: typeforce.String
 })
@@ -35,13 +35,19 @@ exports.email = typeforce.compile({
 })
 
 exports.consentDetails = typeforce.compile({
-  consentType: typeforce.oneOf(['PDP_CONSENT', 'PARTNER_CONSENT']),
-  isConsentGiven: typeforce.oneOf(['true', 'false'])
+  consentType: oneOf('PDP_CONSENT', 'PARTNER_CONSENT'),
+  isConsentGiven: oneOf('true', 'false')
 })
 
 exports.applicant = typeforce.compile({
-  name: exports.name.
-  phones: typeforce.arrayOf(exports.phone),
+  name: exports.name,
+  phone: typeforce.arrayOf(exports.phone),
   email: typeforce.arrayOf(exports.email),
   consentDetails: typeforce.arrayOf(exports.consentDetails)
 })
+
+function oneOf (...vals) {
+  return function (val) {
+    return vals.indexOf(val) !== -1
+  }
+}
