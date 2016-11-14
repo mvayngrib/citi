@@ -1,0 +1,34 @@
+
+{
+  "getClientCredentials": {
+    "access_token" : "AAEkYzFjMDQ0Y2UtNTBmMy00NmY4LWI4YjEtYmQ5ODJkMWZiNGZh3xGP85xjqyxoHR7pXxzQJf223kWPL-HyWHD4zrRCvHZUkeBkTgxppbmpFtmWeVmjzDOxs1wFzI4s45YDS15eYmyuxzLbVog4d8H9pYSelrvL6naDYOLL9U16EaY0iyAMPBGX1H7RhCqtmd-7u_Eanw7QshbruLaZh2stOrdq2thC5CCSwW2r0e8PM1QbWubJOcMp8UGv-zNc0I3cTSihymSCF44HJ_yeuPAcXJ7kj-iPzQqxaO6FiWPmIsIh2YSxdGYo8alTyjJfG5AQDnM0HA",
+    "refresh_token" : "AAGsyASCzlBplxGvA-5CFCkLhNinu6-0HQt-y7PuzsRLVAHok6yYs6KS2Np4t7bL0R8FMeT62wYXFxxY6F7LU_cc00QTXPfoQFFtay2tu3eGpBAGDg07ll_vNk_AEJo9l1GaEKYev7Q7drDOeRCDRqcD12zJzk36PsQEM6j1txFV2jR3snW5PLs3HVjxNRjUHWLR5IoI2qfb8zCZNahrFCRQ7T7ZVB_-E6Qk22tN3hZkZH7_kB3bZjtVoNxyjJ6qBDcrYdgtAvPvBV-xXDBmfUXD44JBYiZffHjEr2dFb_e3yA",
+    "scope" : "/dda/customer /dda/accountlist /dda/account /dda/accountsdetails /dda/account/transactions",
+    "token_type" : "bearer",
+    "expires_in" : 1800.0
+  },
+  "products":  {
+    "nextStartIndex" : "11",
+    "products" : [
+      {
+        "interestRate" : 28.25,
+        "latePaymentFee" : 150.25,
+        "minimumCreditLimitAmount" : 5000.25,
+        "organisation" : "888",
+        "importantInformations" : "All Rewards are subject to the terms and conditions of the Citibank Rewards Program. ",
+        "annualFeeAmount" : 100.25,
+        "maximumCreditLimitAmount" : 10000.25,
+        "termsAndConditions" : "Terms and conditions",
+        "sourceCode" : "WW5ARCE1",
+        "productCode" : "VC380",
+        "productImage" : "0101010001101000011010010111001100100000011001100110100101100101011011000110010000100000011000110110",
+        "agreementExpiryDate" : "2018-12-10",
+        "agreementStartDate" : "2016-10-10",
+        "logo" : "830",
+        "currencyCode" : "SGD",
+        "productDescription" : "Citibank SMRT Visa Card",
+        "productType" : "CC"
+      }
+    ]
+  }
+}
